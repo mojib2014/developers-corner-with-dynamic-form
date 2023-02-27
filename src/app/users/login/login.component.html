@@ -1,0 +1,13 @@
+<div class="container">
+  <div class="panel panel-default">
+    <div class="panel-heading mb-3">
+      <h2 id="title" class="my-5">{{ "LOGIN.TITLE" | translate }}</h2>
+    </div>
+    <div class="form-container">
+      <app-dynamic-form
+        [formFields]="loginForm"
+        (submitEvent)="onSubmit($event)"
+      ></app-dynamic-form>
+    </div>
+  </div>
+</div>

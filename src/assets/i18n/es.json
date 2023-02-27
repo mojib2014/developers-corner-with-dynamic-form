@@ -1,0 +1,58 @@
+{
+    "APP": {
+        "HOME": "Inicio",
+        "LOGIN": "Entrar",
+        "LOGOUT": "SALIR",
+        "REGISTER": "Registrar",
+        "PROFILE": "Perfil",
+        "QUESTIONS": "Preguntas"
+    },
+    "HOME":{
+        "TITLE": "Bienvenido a Developers Corner",
+        "YOUR_STATUS": "Su estado",
+        "CHECK_IN": "Registrar una pregunta",
+        "NEW_QUESTION_BTN": "Nuevo Pregunta",
+        "POSSIBLE_SOLUTIONS": "Soluciones Possibles",
+        "ANSWER_TITLE": "{{value}}",
+        "USERS_ONLINE": "Usadores en Lina",
+        "FORM": {
+            "USERNAME": "Usuario",
+            "STUDENT_ROLE": "Soy Estudiante",
+            "MENTOR_ROLE": "Soy Maestro",
+            "TAGS": "Tags",
+            "QUESTION": "Pregunta",
+            "USERNAME_REQUIRED": "Usuario esta .",
+            "USERNAME_MIN_REQUIRED": "Usuario nessecita estar para minus 3 letras largo.",
+            "ROLE_REQUIRED": "Role is required.",
+            "TAGS_REQUIRED": "Tags is required.",
+            "QUESTION_REQUIRED": "Pregunta is required."
+        }
+    },
+    "LOGIN": {
+        "TITLE": "Forma de entrar",
+        "EMAIL": "Coreo",
+        "PASSWORD": "Contrasena",
+        "BTN": "Entrar"
+    },  
+    "REGISTER": {
+        "TITLE": "Forma de Registrar",
+        "FIRST_NAME": "Premer Nombere",
+        "LAST_NAME": "Pallido",
+        "NICK_NAME": "Nick Name",
+        "TYPE": "Role",
+        "EMAIL": "Coreo",
+        "PASSWORD": "Contrasena",
+        "BTN": "Registrar",
+        "CREATED_AT": "Registrado En"
+    },
+    "PROFILE": {
+        "TITLE": "Perfil Update", 
+        "EDIT_BTN": "Modificar",
+        "SAVE_BTN": "Aurar",
+        "REMOVE_BTN": "Borar",
+        "CLOSE_BTN": "Serar"
+    },
+    "QUESTION": {
+        "USERID": "ID de Usuario"
+    }
+}

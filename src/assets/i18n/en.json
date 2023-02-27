@@ -1,0 +1,58 @@
+{
+    "APP": {
+        "HOME": "Home",
+        "LOGIN": "Login",
+        "LOGOUT": "Logout",
+        "REGISTER": "Register",
+        "PROFILE": "Profile",
+        "QUESTIONS": "Questions"
+    },
+    "HOME":{
+        "TITLE": "Welcome to Developers Corner",
+        "YOUR_STATUS": "Your status",
+        "CHECK_IN": "Check In",
+        "NEW_QUESTION_BTN": "New Question",
+        "POSSIBLE_SOLUTIONS": "Possible Solutions",
+        "ANSWER_TITLE": "{{value}}",
+        "USERS_ONLINE": "Users Online",
+        "FORM": {
+            "USERNAME": "Username",
+            "STUDENT_ROLE": "I'm a Student",
+            "MENTOR_ROLE": "I'm a Mentor",
+            "TAGS": "Tags",
+            "QUESTION": "Question",
+            "USERNAME_REQUIRED": "Username is required.",
+            "USERNAME_MIN_REQUIRED": "Username must be at least 3 characters long.",
+            "ROLE_REQUIRED": "Role is required.",
+            "TAGS_REQUIRED": "Tags is required.",
+            "QUESTION_REQUIRED": "Question is required."
+        }
+    },
+    "LOGIN": {
+        "TITLE": "Login Form",
+        "EMAIL": "Email",
+        "PASSWORD": "Password",
+        "BTN": "Login"
+    },
+    "REGISTER": {
+        "TITLE": "Register Form",
+        "FIRST_NAME": "First Name",
+        "LAST_NAME": "Last Name",
+        "NICK_NAME": "Nick Name",
+        "TYPE": "Role",
+        "EMAIL": "Email",
+        "PASSWORD": "Password",
+        "BTN": "Register",
+        "CREATED_AT": "Created At"
+    }, 
+    "PROFILE": {
+        "TITLE": "Profile Update", 
+        "EDIT_BTN": "Edit",
+        "SAVE_BTN": "Save",
+        "REMOVE_BTN": "Delete",
+        "CLOSE_BTN": "Close"
+    },
+    "QUESTION": {
+        "USERID": "USER ID"
+    }
+}

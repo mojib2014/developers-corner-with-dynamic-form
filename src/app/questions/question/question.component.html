@@ -1,0 +1,51 @@
+<div class="container panel panel-default mt-5">
+  <table class="table table-hover" id="questionTable">
+    <thead>
+      <tr>
+        <th>{{ "HOME.FORM.USERNAME" | translate }}</th>
+        <th>{{ "HOME.FORM.TAGS" | translate }}</th>
+        <th>{{ "REGISTER.TYPE" | translate }}</th>
+        <th>{{ "HOME.FORM.QUESTION" | translate }}</th>
+        <th>{{ "QUESTION.USERID" | translate }}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <ng-container *ngIf="questions.length">
+        <tr *ngFor="let question of questions" id="list">
+          <td>{{ question.username }}</td>
+          <td>{{ question.tags }}</td>
+          <td>{{ question.role }}</td>
+          <td>{{ question.question }}</td>
+          <td>{{ question.user.id }}</td>
+          <td>
+            <button
+              type="button"
+              id="openModal"
+              (click)="openModal(question)"
+              class="btn btn-success custom-width"
+            >
+              Edit
+            </button>
+            <button
+              type="button"
+              id="removeBtn"
+              (click)="onRemove(question.id)"
+              class="btn btn-danger custom-width"
+            >
+              Remove
+            </button>
+          </td>
+        </tr>
+      </ng-container>
+      <p *ngIf="!questions.length">You don't have any questions yet.</p>
+    </tbody>
+  </table>
+</div>
+
+<!-- Question edit form modal -->
+<app-global-modal #modal [modalConfig]="modalConfig">
+  <app-dynamic-form
+    [formFields]="updateForm"
+    (submitEvent)="onSubmit($event)"
+  ></app-dynamic-form>
+</app-global-modal>

@@ -1,0 +1,45 @@
+<div class="container panel panel-default mt-5">
+  <h1 class="mb-4" id="title">{{ user?.lastName }}'s Profile</h1>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>{{ "REGISTER.FIRST_NAME" | translate }}</th>
+        <th>{{ "REGISTER.LAST_NAME" | translate }}</th>
+        <th>{{ "REGISTER.EMAIL" | translate }}</th>
+        <th>{{ "REGISTER.CREATED_AT" | translate }}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td id="fName">{{ user?.firstName }}</td>
+        <td>{{ user?.lastName }}</td>
+        <td>{{ user?.email }}</td>
+        <td>
+          {{ user?.createdAt | date : "medium" }}
+        </td>
+        <td>
+          <button
+            type="button"
+            id="openModalBtn"
+            (click)="openModal()"
+            class="btn btn-success custom-width"
+          >
+            {{ "PROFILE.EDIT_BTN" | translate }}
+          </button>
+          <button
+            type="button"
+            (click)="onRemove(user.id)"
+            class="btn btn-danger custom-width"
+          >
+            {{ "PROFILE.REMOVE_BTN" | translate }}
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<!-- Profile edit form modal -->
+<app-global-modal #modal [modalConfig]="modalConfig">
+  <app-dynamic-form [formFields]="profileForm" (submitEvent)="onSubmit($event)">
+  </app-dynamic-form>
+</app-global-modal>

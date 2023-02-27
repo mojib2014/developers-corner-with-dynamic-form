@@ -1,0 +1,61 @@
+@charset "ISO-8859-1";
+
+*, *::before, *::after {
+	box-sizing: border-box;
+}
+
+header {
+	background-color: #f8f8f8;
+	width: 100%;
+}
+
+header nav {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+main {
+	padding-top: 3rem;
+}
+
+ul {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+ul li a {
+	display: block;
+	padding: 10px 8px;
+}
+
+.ng-reflect-router-link-active {
+	background-color: dodgerblue;
+	color: white;
+}
+
+/******************** Modal *****************/
+.modal-container {
+	position: absolute;
+	left: 25vw;
+	right: 25vw;
+	top: 25vh;
+	bottom: 25vh;
+}
+
+.modal {
+	display: none;
+}
+
+/******************** Modal *****************/
+footer {
+	background-color: #777;
+	color: white;
+	width: 100%;
+	margin-top: 50px;
+	padding: 8px 0;
+}

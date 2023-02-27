@@ -1,0 +1,117 @@
+<section class="my-5">
+  <h1 id="title">{{ "HOME.TITLE" | translate }}</h1>
+  <p>This is the banner area</p>
+</section>
+<article class="row alignt-items-center">
+  <aside class="col col-2 your-status aside-left shadow-lg p-3 bg-body rounded">
+    <h3>{{ "HOME.YOUR_STATUS" | translate }}</h3>
+  </aside>
+  <section class="col col-8 ask-question-form possible-solutions">
+    <h2 id="question-form-title">{{ "HOME.CHECK_IN" | translate }}</h2>
+    <!-- Question form -->
+    <app-question-form
+      (displayAnswersEvent)="onSubmit($event)"
+      *ngIf="!displayAnswers"
+    ></app-question-form>
+    <div *ngIf="displayAnswers">
+      <div>
+        <button
+          (click)="newQuestion()"
+          id="new-question-btn"
+          class="new-question btn btn-warning float-right mb-3"
+        >
+          {{ "HOME.NEW_QUESTION_BTN" | translate }}
+        </button>
+        <h2 class="sub-title mb-3">
+          {{ "HOME.POSSIBLE_SOLUTIONS" | translate }}
+        </h2>
+        <div
+          *ngFor="let answer of answers"
+          class="bg-body border border-gray shadow-lg roudned p-3"
+        >
+          <h3>
+            {{ "HOME.ANSWER_TITLE" | translate : { value: answer.title } }}
+          </h3>
+          <a target="_blank" href="{{ answer.link }}">{{ answer.title }}</a>
+          <p>Rating: {{ answer.view_count }}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <aside
+    class="col col-2 users-online aside-right shadow-lg p-3 bg-body rounded"
+  >
+    <h3>{{ "HOME.USERS_ONLINE" | translate }}</h3>
+    <div *ngFor="let user of users">
+      <p>
+        {{ user?.lastName }} {{ user?.type }}
+        <button (click)="openModal()" class="btn btn-sm btn-primary chat-btn">
+          Chat
+        </button>
+      </p>
+    </div>
+  </aside>
+</article>
+
+<app-global-modal #modal [modalConfig]="modalConfig">
+  <div>
+    <p *ngFor="let message of messages">
+      <span>{{ message.sender }}: </span>{{ message.message }}
+    </p>
+  </div>
+  <app-dynamic-form
+    [formFields]="chatForm"
+    (submitEvent)="onChatSubmit($event)"
+  ></app-dynamic-form>
+</app-global-modal>
+
+<!-- <div *ngIf="modalOpen" class="modal-container" role="document">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title">Chat</h5>
+      <button
+        ng-click="closeChatModal()"
+        type="button"
+        class="close"
+        data-dismiss="modal"
+        aria-label="Close"
+      >
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <div>
+        <p ng-repeat="message in messages">
+          <span>{{ message.sender }}: </span>{{ message.message }}
+        </p>
+      </div>
+      <form name="chatForm" ng-submit="sendMessage()">
+        <input type="hidden" ng-model="message.id" />
+        <div class="input-group mb-3">
+          <span class="input-group-text" id="basic-addon1">Message</span>
+          <textarea
+            name="message"
+            ng-model="message.message"
+            class="form-control"
+            rows="3"
+            placeholder="Start chating"
+            required
+          ></textarea>
+        </div>
+        <div class="form-actions floatRight">
+          <input class="btn btn-primary" type="submit" value="Send" />
+        </div>
+      </form>
+    </div>
+    <div class="modal-footer">
+      <button
+        type="button"
+        class="btn btn-secondary"
+        data-dismiss="modal"
+        ng-click="closeChatModal()"
+      >
+        Close
+      </button>
+    </div>
+  </div>
+</div> -->

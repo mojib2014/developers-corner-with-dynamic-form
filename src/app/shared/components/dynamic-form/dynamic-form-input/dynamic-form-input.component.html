@@ -1,0 +1,58 @@
+<section [formGroup]="form">
+  <section [ngSwitch]="field.controlType">
+    <div class="input-group mb-3" *ngSwitchCase="'textbox'">
+      <span class="input-group-text">{{field.icon}}</span>
+      <div class="form-floating">
+        <input
+          [formControlName]="field.key"
+          [id]="field.key"
+          [type]="field.type"
+          class="form-control"
+          placeholder="{{ field.placeholder }}"
+        />
+        <label [attr.for]="field.key">{{ field.label }}</label>
+      </div>
+    </div>
+
+    <div class="input-group mb-3" *ngSwitchCase="'dropdown'">
+      <span class="input-group-text">{{field.icon}}</span>
+      <div class="form-floating">
+        <select
+          [id]="field.key"
+          [formControlName]="field.key"
+          class="form-select"
+        >
+          <option *ngIf="field.value" selected>{{field.label}}</option>
+          <option *ngFor="let opt of field.options" [value]="opt.key">
+            {{ opt.value }}
+          </option>
+        </select>
+        <label [attr.for]="field.key">{{ field.label }}</label>
+      </div>
+    </div>
+
+    <div class="input-group mb-3" *ngSwitchCase="'textarea'">
+      <span class="input-group-text">{{field.icon}}</span>
+      <div class="form-floating">
+        <textarea
+          [id]="field.key"
+          [formControlName]="field.key"
+          style="height: 100px"
+          class="form-control"
+          placeholder="{{field.placeholder}}"
+        ></textarea>
+        <label [attr.for]="field.key">{{ field.label }}</label>
+      </div>
+    </div>
+  </section>
+
+  <div class="alert alert-danger" *ngIf="isValid()">
+    <div *ngIf="field.required">{{ field.label }} is required.</div>
+    <div *ngIf="field.minlength">
+      {{ field.label }} must be at least {{ field.minlength }} characters long.
+    </div>
+    <!-- <div *ngIf="field">
+      {{ field.label }} must be a valid {{ field.label }}.
+    </div> -->
+  </div>
+</section>
